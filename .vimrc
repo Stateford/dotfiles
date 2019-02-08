@@ -35,8 +35,8 @@ Plug '~/my-prototype-plugin'
 
 Plug 'valloric/youcompleteme'
 Plug 'joshdick/onedark.vim'
-
-
+Plug 'itchyny/lightline.vim'
+Plug 'scrooloose/syntastic'
 " Initialize plugin system
 call plug#end()
 
@@ -47,6 +47,8 @@ filetype plugin indent on
 set tabstop=4
 set shiftwidth=4
 set expandtab
+set laststatus=2
+set noshowmode
 
 let g:onedark_hide_endofbuffer = 1
 let g:onedark_termcolors = 256
@@ -54,3 +56,7 @@ let g:onedark_terminal_italics = 1
 
 
 colorscheme onedark
+
+let g:lightline = {
+      \ 'colorscheme': 'one',
+      \ }
