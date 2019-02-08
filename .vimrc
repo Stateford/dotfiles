@@ -37,6 +37,8 @@ Plug 'valloric/youcompleteme'
 Plug 'joshdick/onedark.vim'
 Plug 'itchyny/lightline.vim'
 Plug 'scrooloose/syntastic'
+Plug 'scrooloose/nerdcommenter'
+
 " Initialize plugin system
 call plug#end()
 
@@ -54,6 +56,7 @@ let g:onedark_hide_endofbuffer = 1
 let g:onedark_termcolors = 256
 let g:onedark_terminal_italics = 1
 
+map <C-o> :NERDTreeToggle<CR>
 
 colorscheme onedark
 
