@@ -35,6 +35,7 @@ Plug '~/my-prototype-plugin'
 
 Plug 'valloric/youcompleteme'
 Plug 'joshdick/onedark.vim'
+Plug 'morhetz/gruvbox'
 Plug 'itchyny/lightline.vim'
 Plug 'scrooloose/syntastic'
 Plug 'scrooloose/nerdcommenter'
@@ -58,7 +59,9 @@ let g:onedark_terminal_italics = 1
 
 map <C-o> :NERDTreeToggle<CR>
 
-colorscheme onedark
+"colorscheme onedark
+colorscheme gruvbox
+set background=dark    " Setting dark mode
 
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
@@ -68,8 +71,7 @@ let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
-
-let g:syntastic_python_pylint_post_args="--max-line-length=120"
+let g:syntastic_python_pylint_post_args="--max-line-length=100"
 
 let g:lightline = {
       \ 'colorscheme': 'one',
