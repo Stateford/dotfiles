@@ -60,6 +60,8 @@ let g:onedark_terminal_italics = 1
 
 map <C-o> :NERDTreeToggle<CR>
 
+let g:UltiSnipsExpandTrigger="<c-j>"
+
 "colorscheme onedark
 colorscheme gruvbox
 set background=dark    " Setting dark mode
@@ -73,13 +75,9 @@ let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 let g:syntastic_python_checkers = ['pylint']
+let g:syntastic_python_pylint_args = "-E"
 let g:syntastic_python_pylint_post_args="--max-line-length=100"
-let g:syntastic_javascript_checkers = ['eslint']
-
-let g:syntastic_c_check_header = 1
-let g:syntastic_c_auto_refresh_includes = 1
-let g:syntastic_c_remove_include_errors = 1
-
+let g:syntastic_python_pylint_args = "--max-line-length=100"
 let g:lightline = {
       \ 'colorscheme': 'one',
       \ }
