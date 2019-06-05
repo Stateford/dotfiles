@@ -72,8 +72,13 @@ set statusline+=%*
 
 set completeopt-=preview
 
+set foldmethod=indent
+set foldnestmax=10
+set nofoldenable
+set foldlevel=2
+
 let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
+let g:syntastic_auto_loc_list = 0
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 let g:syntastic_python_checkers = ['pylint']
@@ -83,3 +88,16 @@ let g:syntastic_python_pylint_args = "--max-line-length=100"
 let g:lightline = {
       \ 'colorscheme': 'one',
       \ }
+
+map <leader>e <ESC>: call SyntasticToggle() <CR>
+
+let g:syntastic_is_open = 0
+function! SyntasticToggle()
+    if g:syntastic_is_open == 1
+        lclose
+        let g:syntastic_is_open = 0
+    else
+        Errors
+        let g:syntastic_is_open = 1
+    endif
+endfunction
