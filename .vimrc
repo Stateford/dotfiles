@@ -91,6 +91,8 @@ let g:lightline = {
 
 map <leader>e <ESC>: call SyntasticToggle() <CR>
 
+let g:syntastic_java_checkers = []
+
 let g:syntastic_is_open = 0
 function! SyntasticToggle()
     if g:syntastic_is_open == 1
