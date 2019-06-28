@@ -17,6 +17,7 @@ URxvt.matcher.button: 1
 URxvt.transparent: true
 URxvt.shading: 20
 
+
 ! -----------------------------------------------------------------------------
 ! File: gruvbox-urxvt256.xresources
 ! Description: Retro groove colorscheme generalized
