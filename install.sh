@@ -9,3 +9,6 @@ curl -fLo ~/.local/share/xfce4/terminal/colorschemes/gruvbox-dark.theme --create
 
 cp ./.vimrc ~/.vimrc
 cp ./.zshrc ~/.zshrc
+
+sudo apt-get update -y
+sudo apt-get install clang rxvt-unicode i3 i3-wm i3blocks fonts-hack fonts-firacode fonts-fantasque-sans -y
