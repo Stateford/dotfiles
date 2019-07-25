@@ -40,6 +40,8 @@ Plug 'itchyny/lightline.vim'
 Plug 'scrooloose/syntastic'
 Plug 'scrooloose/nerdcommenter'
 Plug 'rust-lang/rust.vim'
+Plug 'stephpy/vim-yaml'
+Plug 'airblade/vim-gitgutter'
 
 " Initialize plugin system
 call plug#end()
@@ -54,17 +56,13 @@ set expandtab
 set laststatus=2
 set noshowmode
 
-let g:onedark_hide_endofbuffer = 1
-let g:onedark_termcolors = 256
-let g:onedark_terminal_italics = 1
-
 map <C-o> :NERDTreeToggle<CR>
 
 let g:UltiSnipsExpandTrigger="<c-j>"
 
-"colorscheme onedark
 colorscheme gruvbox
 set background=dark    " Setting dark mode
+let g:gruvbox_contrast_dark = "medium"
 
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
@@ -85,15 +83,24 @@ let g:syntastic_python_checkers = ['pylint']
 let g:syntastic_python_pylint_args = "-E"
 let g:syntastic_python_pylint_post_args="--max-line-length=100"
 let g:syntastic_python_pylint_args = "--max-line-length=100"
+
 let g:lightline = {
-      \ 'colorscheme': 'one',
+      \ 'colorscheme': 'gruvbox',
       \ }
 
 map <leader>e <ESC>: call SyntasticToggle() <CR>
+map ; :Files<CR>
+
+let g:gitgutter_enabled = 0
+
+map <leader>g <ESC>:GitGutterToggle <CR>
+
+let g:pymode_python = 'python3'
 
 let g:syntastic_java_checkers = []
 
 let g:syntastic_is_open = 0
+
 function! SyntasticToggle()
     if g:syntastic_is_open == 1
         lclose
