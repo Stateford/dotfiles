@@ -1,4 +1,4 @@
-"Specify a directory for plugins
+"Specif a directory for plugins
 " - For Neovim: ~/.local/share/nvim/plugged
 " - Avoid using standard Vim directory names like 'plugin'
 call plug#begin('~/.vim/plugged')
@@ -89,7 +89,7 @@ let g:lightline = {
       \ }
 
 map <leader>e <ESC>: call SyntasticToggle() <CR>
-map ; :Files<CR>
+map ; :FZF<CR>
 
 let g:gitgutter_enabled = 0
 
@@ -98,7 +98,6 @@ map <leader>g <ESC>:GitGutterToggle <CR>
 let g:pymode_python = 'python3'
 
 let g:syntastic_java_checkers = []
-
 let g:syntastic_is_open = 0
 
 function! SyntasticToggle()
