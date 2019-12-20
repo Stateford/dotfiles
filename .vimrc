@@ -42,6 +42,9 @@ Plug 'scrooloose/nerdcommenter'
 Plug 'rust-lang/rust.vim'
 Plug 'stephpy/vim-yaml'
 Plug 'airblade/vim-gitgutter'
+Plug 'udalov/kotlin-vim'
+Plug 'jalvesaq/Nvim-R'
+Plug 'sainnhe/gruvbox-material'
 
 " Initialize plugin system
 call plug#end()
@@ -60,9 +63,19 @@ map <C-o> :NERDTreeToggle<CR>
 
 let g:UltiSnipsExpandTrigger="<c-j>"
 
-colorscheme gruvbox
 set background=dark    " Setting dark mode
-let g:gruvbox_contrast_dark = "medium"
+
+" gruvbox
+"colorscheme gruvbox
+"let g:gruvbox_italic=0
+"let g:gruvbox_contrast_dark="soft"
+
+" Gruv box material
+colorscheme gruvbox-material
+let g:gruvbox_material_background = 'hard'
+let g:lightline = {
+      \ 'colorscheme': 'gruvbox_material',
+      \ }
 
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
@@ -84,9 +97,6 @@ let g:syntastic_python_pylint_args = "-E"
 let g:syntastic_python_pylint_post_args="--max-line-length=100"
 let g:syntastic_python_pylint_args = "--max-line-length=100"
 
-let g:lightline = {
-      \ 'colorscheme': 'gruvbox',
-      \ }
 
 map <leader>e <ESC>: call SyntasticToggle() <CR>
 map ; :FZF<CR>
@@ -96,6 +106,14 @@ let g:gitgutter_enabled = 0
 map <leader>g <ESC>:GitGutterToggle <CR>
 
 let g:pymode_python = 'python3'
+
+let g:ycm_language_server = [
+  \   { 'name': 'kotlin',
+  \     'filetypes': [ 'kotlin' ], 
+  \     'cmdline': [ expand( '$HOME/GitHub/lsp-examples/kotlin/KotlinLanguageServer/server/build/install/server/bin/kotlin-language-server' ) ],
+  \   }
+  \ ]
+
 
 let g:syntastic_java_checkers = []
 let g:syntastic_is_open = 0
