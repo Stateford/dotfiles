@@ -16,7 +16,7 @@ URxvt.matcher.button: 1
 URxvt.termName: rxvt-unicode-256color
 
 URxvt.transparent: true
-URxvt.shading: 70
+URxvt.shading: 60
 
 URxvt.keysym.Shift-Control-V: eval:paste_clipboard
 URxvt.keysym.Shift-Control-C: eval:selection_to_clipboard
