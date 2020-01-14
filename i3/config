@@ -195,8 +195,7 @@ font pango:Hack 8
 #start of bar section
 bar {
     position bottom
-    #i3bar_command i3bar -t
-    #status_command i3blocks -c ~/.config/i3/i3blocks.conf
+    status_command i3blocks -c ~/.config/i3/i3blocks.conf
     i3bar_command i3bar --transparency
 
     colors {
