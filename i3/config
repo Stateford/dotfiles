@@ -175,8 +175,11 @@ bindsym $mod+r mode "resize"
 #THEME#
 #######
 
+# transparent color
+set $transparent #00000000
+
 # set primary gruvbox colorscheme colors
-set $bg #282828
+set $bg #28282800
 set $red #cc241d
 set $green #98971a
 set $yellow #d79921
@@ -192,18 +195,23 @@ font pango:Hack 8
 #start of bar section
 bar {
     position bottom
-    status_command i3blocks -c ~/.config/i3/i3blocks.conf
+    #i3bar_command i3bar -t
+    #status_command i3blocks -c ~/.config/i3/i3blocks.conf
+    i3bar_command i3bar --transparency
+
     colors {
         # bar background color
-        background $bg
+        background $transparent
+
         # text color used for blocks that do not have a color specified.
         statusline $yellow
+        
         # workspaces section            
         #                    border  backgr. text
-        focused_workspace    $aqua $aqua $darkgray
-        inactive_workspace   $darkgray $darkgray $yellow
-        active_workspace     $darkgray $darkgray $yellow
-        urgent_workspace     $red $red $bg
+        #focused_workspace    $aqua $aqua $darkgray
+        #inactive_workspace   $darkgray $darkgray $yellow
+        #active_workspace     $darkgray $darkgray $yellow
+        #urgent_workspace     $red $red $bg
     }
 }
 #end of bar section
@@ -228,5 +236,5 @@ client.urgent           $red $red $white $red $red
 for_window [class=".*"] border pixel 1
 smart_gaps on
 smart_borders on
-gaps outer 10
+gaps outer 0
 gaps inner 10
