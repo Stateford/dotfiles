@@ -43,6 +43,8 @@ Plug 'rust-lang/rust.vim'
 Plug 'stephpy/vim-yaml'
 Plug 'airblade/vim-gitgutter'
 Plug 'udalov/kotlin-vim'
+Plug 'jalvesq/Nvim-R'
+Plug 'sainnhe/gruvbox-material'
 
 " Initialize plugin system
 call plug#end()
@@ -99,8 +101,14 @@ map <leader>g <ESC>:GitGutterToggle <CR>
 
 let g:pymode_python = 'python3'
 
-let g:syntastic_java_checkers = []
+let g:ycm_language_server = [
+    \ { 'name': 'kotlin',
+    \   'filetypes': [ 'kotlin' ],
+    \   'cmdline': [ expand( '$HOME/GitHub/lsp-examples/kotlin/KotlinLanguageServer/server/build/install/server/bin/kotlin-language-server' ) ],
+    \   }
+    \ ]
 
+let g:syntastic_java_checkers = []
 let g:syntastic_is_open = 0
 
 function! SyntasticToggle()
