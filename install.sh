@@ -11,4 +11,5 @@ cp ./.vimrc ~/.vimrc
 cp ./.zshrc ~/.zshrc
 
 sudo apt-get update -y
-sudo apt-get install clang rxvt-unicode i3 i3-wm i3blocks fonts-hack fonts-firacode fonts-fantasque-sans -y
+# TODO: must add i3 gaps
+sudo apt-get install clang rxvt-unicode i3 i3-wm i3blocks fonts-hack fonts-firacode fonts-fantasque-sans compton -y

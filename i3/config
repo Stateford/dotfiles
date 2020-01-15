@@ -179,7 +179,7 @@ bindsym $mod+r mode "resize"
 set $transparent #00000000
 
 # set primary gruvbox colorscheme colors
-set $bg #28282800
+set $bg #28282850
 set $red #cc241d
 set $green #98971a
 set $yellow #d79921
@@ -200,7 +200,7 @@ bar {
 
     colors {
         # bar background color
-        background $transparent
+        background $bg
 
         # text color used for blocks that do not have a color specified.
         statusline $yellow
@@ -237,3 +237,5 @@ smart_gaps on
 smart_borders on
 gaps outer 0
 gaps inner 10
+
+exec --no-startup-id compton
