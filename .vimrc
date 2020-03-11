@@ -1,5 +1,5 @@
-"Specify a directory for plugins
-" - For Neovim: ~/.local/share/nvim/plugged
+"Specif a directory for plugins
+"" - For Neovim: ~/.local/share/nvim/plugged
 " - Avoid using standard Vim directory names like 'plugin'
 call plug#begin('~/.vim/plugged')
 
@@ -42,15 +42,12 @@ Plug 'scrooloose/nerdcommenter'
 Plug 'rust-lang/rust.vim'
 Plug 'stephpy/vim-yaml'
 Plug 'airblade/vim-gitgutter'
-Plug 'udalov/kotlin-vim'
-Plug 'jalvesq/Nvim-R'
-Plug 'sainnhe/gruvbox-material'
+Plug 'suoto/vim-hdl'
 
 " Initialize plugin system
 call plug#end()
 
 
-set t_Co=256
 set number
 syntax on
 filetype plugin indent on
@@ -60,7 +57,7 @@ set expandtab
 set laststatus=2
 set noshowmode
 
-map <C-o> :NERDTreeToggle<CR>
+map <C-d> :NERDTreeToggle<CR>
 
 let g:UltiSnipsExpandTrigger="<c-j>"
 
@@ -89,8 +86,8 @@ let g:syntastic_python_pylint_post_args="--max-line-length=100"
 let g:syntastic_python_pylint_args = "--max-line-length=100"
 
 let g:lightline = {
-      \ 'colorscheme': 'gruvbox',
-      \ }
+     \ 'colorscheme': 'gruvbox',
+           \ }
 
 map <leader>e <ESC>: call SyntasticToggle() <CR>
 map ; :FZF<CR>
@@ -99,24 +96,21 @@ let g:gitgutter_enabled = 0
 
 map <leader>g <ESC>:GitGutterToggle <CR>
 
-let g:pymode_python = 'python3'
+nnoremap <leader>i :split<CR> :YcmCompleter GoToDeclaration <CR>
+nnoremap <leader>o :split<CR> :YcmCompleter GoToDefinition <CR>
 
-let g:ycm_language_server = [
-    \ { 'name': 'kotlin',
-    \   'filetypes': [ 'kotlin' ],
-    \   'cmdline': [ expand( '$HOME/GitHub/lsp-examples/kotlin/KotlinLanguageServer/server/build/install/server/bin/kotlin-language-server' ) ],
-    \   }
-    \ ]
+let g:pymode_python = 'python3'
 
 let g:syntastic_java_checkers = []
 let g:syntastic_is_open = 0
 
 function! SyntasticToggle()
-    if g:syntastic_is_open == 1
-        lclose
-        let g:syntastic_is_open = 0
-    else
-        Errors
-        let g:syntastic_is_open = 1
-    endif
+   if g:syntastic_is_open == 1
+       lclose
+       let g:syntastic_is_open = 0
+   else
+       Errors
+       let g:syntastic_is_open = 1
+   endif
 endfunction
+
