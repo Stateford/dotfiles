@@ -97,7 +97,9 @@ let g:gitgutter_enabled = 0
 map <leader>g <ESC>:GitGutterToggle <CR>
 
 nnoremap <leader>i :split<CR> :YcmCompleter GoToDeclaration <CR>
+nnoremap <leader>ti :tab split<CR> :YcmCompleter GoToDeclaration <CR>
 nnoremap <leader>o :split<CR> :YcmCompleter GoToDefinition <CR>
+nnoremap <leader>to :tab split<CR> :YcmCompleter GoToDefinition <CR>
 
 let g:pymode_python = 'python3'
 
